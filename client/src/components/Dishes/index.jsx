@@ -1,18 +1,34 @@
-import React from "react";
-import { dishes } from "../../data/data";
-import { Box, Image, Badge, HStack, Flex } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, Image, Badge, Container } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
+import Dish from "../Dish";
 
-const Dishes = () => {
+const Dishes = (dishes) => {
+  const [selected, setSelected] = useState("");
+
+  const handleClick = (dish) => {
+    setSelected(dish);
+  };
+
+  console.log(selected);
+
   return (
     <>
-      {dishes.map((dish) => (
+      {selected ? (
+        <Container minWidth={"100%"}>
+          <Dish dish={selected} />
+        </Container>
+      ) : (
+        <Container minWidth={"100%"}></Container>
+      )}
+      {dishes.dishes.map((dish) => (
         <Box
           maxW="sm"
           borderWidth="1px"
           borderRadius="lg"
           overflow="hidden"
           m={"10px"}
+          onClick={() => handleClick(dish)}
         >
           <Image src={dish.image} alt={dish.name} />
 

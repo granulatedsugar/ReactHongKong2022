@@ -4,7 +4,7 @@ export const dishes = [
     name: "Uthappizza",
     image:
       "https://images.unsplash.com/photo-1590947132387-155cc02f3212?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470",
-    category: "mains",
+    category: "Mains",
     label: "Hot",
     price: "4.99",
     description:
@@ -15,7 +15,7 @@ export const dishes = [
     name: "Zucchipakoda",
     image:
       "https://images.unsplash.com/photo-1584959370147-fcdd784b2e45?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470",
-    category: "appetizer",
+    category: "Appetizer",
     label: "Sale",
     price: "1.99",
     description:
@@ -26,7 +26,7 @@ export const dishes = [
     name: "Vadonut",
     image:
       "https://images.unsplash.com/photo-1573050329989-9c2509328687?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470",
-    category: "appetizer",
+    category: "Appetizer",
     label: "New",
     price: "1.99",
     description:
@@ -37,7 +37,7 @@ export const dishes = [
     name: "ElaiCheese Cake",
     image:
       "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470",
-    category: "dessert",
+    category: "Dessert",
     label: "Sale",
     price: "2.99",
     description:
