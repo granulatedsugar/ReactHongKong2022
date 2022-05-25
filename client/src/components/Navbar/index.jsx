@@ -269,12 +269,12 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
+    label: "Menu",
     children: [
       {
         label: "Explore Design Work",
         subLabel: "Trending Design to inspire you",
-        href: "#",
+        href: "/menu",
       },
       {
         label: "New & Noteworthy",

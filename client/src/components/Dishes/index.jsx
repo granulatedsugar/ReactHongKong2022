@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Image, Badge, Container } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import Dish from "../Dish";
+import Comments from "../Comments";
 
 const Dishes = (dishes) => {
   const [selected, setSelected] = useState("");
@@ -14,13 +15,6 @@ const Dishes = (dishes) => {
 
   return (
     <>
-      {selected ? (
-        <Container minWidth={"100%"}>
-          <Dish dish={selected} />
-        </Container>
-      ) : (
-        <Container minWidth={"100%"}></Container>
-      )}
       {dishes.dishes.map((dish) => (
         <Box
           maxW="sm"
@@ -78,6 +72,14 @@ const Dishes = (dishes) => {
           </Box>
         </Box>
       ))}
+      {selected ? (
+        <Container minWidth={"100%"}>
+          <Dish dish={selected} />
+          <Comments comment={selected.comments} />
+        </Container>
+      ) : (
+        <Container minWidth={"100%"}></Container>
+      )}
     </>
   );
 };
