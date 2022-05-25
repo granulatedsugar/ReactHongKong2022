@@ -56,9 +56,9 @@ export default function CallToActionWithVideo() {
             color={"gray.500"}
             textAlign={{ base: "left", sm: "center", lg: "left" }}
           >
-            Snippy is a rich coding snippets app that lets you create your own
-            code snippets, categorize them, and even sync them in the cloud so
-            you can use them anywhere. All that is free!
+            We take inspiration from the World's best cuisines, and create a
+            unique fusion experience. Our lipsmacking creations will tickle your
+            culinary senses!
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}

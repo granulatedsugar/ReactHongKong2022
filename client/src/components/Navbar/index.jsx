@@ -272,7 +272,7 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Menu",
     children: [
       {
-        label: "Explore Design Work",
+        label: "Dishes",
         subLabel: "Trending Design to inspire you",
         href: "/menu",
       },
