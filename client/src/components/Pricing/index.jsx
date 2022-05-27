@@ -53,7 +53,7 @@ const PackageTier = ({
       <List spacing={3} textAlign="start">
         {options.map((desc, id) => (
           <ListItem key={desc.id}>
-            <ListIcon as={FaCheckCircle} color="green.500" />
+            <ListIcon as={FaCheckCircle} color="purple.500" />
             {desc.desc}
           </ListItem>
         ))}

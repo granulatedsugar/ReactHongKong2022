@@ -90,7 +90,7 @@ export default function Simple(dish) {
             <Box>
               <Text
                 fontSize={{ base: "16px", lg: "18px" }}
-                color={useColorModeValue("yellow.500", "yellow.300")}
+                color={useColorModeValue("purple.500", "purple.300")}
                 fontWeight={"500"}
                 textTransform={"uppercase"}
                 mb={"4"}
@@ -114,7 +114,7 @@ export default function Simple(dish) {
             <Box>
               <Text
                 fontSize={{ base: "16px", lg: "18px" }}
-                color={useColorModeValue("yellow.500", "yellow.300")}
+                color={useColorModeValue("purple.500", "purple.300")}
                 fontWeight={"500"}
                 textTransform={"uppercase"}
                 mb={"4"}
@@ -176,7 +176,7 @@ export default function Simple(dish) {
             mt={8}
             size={"lg"}
             py={"7"}
-            bg={useColorModeValue("gray.900", "gray.50")}
+            bg={useColorModeValue("purple.500", "purple.50")}
             color={useColorModeValue("white", "gray.900")}
             textTransform={"uppercase"}
             _hover={{

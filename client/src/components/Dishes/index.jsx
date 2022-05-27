@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Box, Image, Badge, Container } from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
+import { Box, Heading, Text, Stack, Image, Container } from "@chakra-ui/react";
+
 import Dish from "../Dish";
 import Comments from "../Comments";
 import { testimonials } from "../../data/data";
-import { Link } from "react-router-dom";
 
 const Dishes = (dishes) => {
   const [selected, setSelected] = useState("");
@@ -19,59 +18,68 @@ const Dishes = (dishes) => {
     <>
       {dishes.dishes.map((dish) => (
         <Box
-          maxW="sm"
-          borderWidth="1px"
-          borderRadius="lg"
-          overflow="hidden"
-          m={"10px"}
+          role={"group"}
+          p={6}
+          maxW={"330px"}
+          w={"full"}
+          boxShadow={"2xl"}
+          rounded={"lg"}
+          pos={"relative"}
+          zIndex={1}
+          margin={10}
           onClick={() => handleClick(dish)}
         >
-          <Image src={dish.image} alt={dish.name} />
-
-          <Box p="6">
-            <Box display="flex" alignItems="baseline">
-              <Badge borderRadius="full" px="2" colorScheme="teal">
-                {dish.label}
-              </Badge>
-              <Box
-                color="gray.500"
-                fontWeight="semibold"
-                letterSpacing="wide"
-                fontSize="xs"
-                textTransform="uppercase"
-                ml="2"
-              >
-                {dish.category}
-              </Box>
-            </Box>
-
-            <Box
-              mt="1"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              noOfLines={1}
-              textAlign={"left"}
-            >
-              {dish.name}
-            </Box>
-
-            <Box textAlign={"left"}>${dish.price}</Box>
-
-            <Box display="flex" mt="2" alignItems="center">
-              {Array(5)
-                .fill("")
-                .map((_, i) => (
-                  <StarIcon
-                    key={i}
-                    color={i < dish.rating ? "teal.500" : "gray.300"}
-                  />
-                ))}
-              <Box as="span" ml="2" color="gray.600" fontSize="sm">
-                {dish.review ? dish.review : "No Reviews"}
-              </Box>
-            </Box>
+          <Box
+            rounded={"lg"}
+            mt={-12}
+            pos={"relative"}
+            height={"230px"}
+            _after={{
+              transition: "all .3s ease",
+              content: '""',
+              w: "full",
+              h: "full",
+              pos: "absolute",
+              top: 5,
+              left: 0,
+              backgroundImage: `url(${dish.image})`,
+              filter: "blur(15px)",
+              zIndex: -1,
+            }}
+            _groupHover={{
+              _after: {
+                filter: "blur(20px)",
+              },
+            }}
+          >
+            <Image
+              rounded={"lg"}
+              height={230}
+              width={282}
+              objectFit={"cover"}
+              src={dish.image}
+            />
           </Box>
+          <Stack pt={10} align={"center"}>
+            <Text
+              color={"gray.500"}
+              fontSize={"sm"}
+              textTransform={"uppercase"}
+            >
+              {dish.category}
+            </Text>
+            <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
+              {dish.name}
+            </Heading>
+            <Stack direction={"row"} align={"center"}>
+              <Text fontWeight={800} fontSize={"xl"}>
+                ${dish.price}
+              </Text>
+              <Text textDecoration={"line-through"} color={"gray.600"}>
+                $5
+              </Text>
+            </Stack>
+          </Stack>
         </Box>
       ))}
       {selected ? (

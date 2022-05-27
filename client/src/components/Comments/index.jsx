@@ -92,7 +92,9 @@ export default function WithSpeechBubbles(comment) {
     <Box bg={useColorModeValue("gray.100", "gray.700")}>
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={"center"}>
-          <Heading>Our Clients Speak</Heading>
+          <Heading color={useColorModeValue("purple.400")}>
+            Our Clients Speak
+          </Heading>
           <Text>We have clients from all over the world</Text>
         </Stack>
         <Stack
@@ -110,7 +112,12 @@ export default function WithSpeechBubbles(comment) {
                   "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
                 }
                 name={com.author}
-                title={com.date}
+                title={new Date(com.date).toLocaleDateString("en-us", {
+                  weekday: "long",
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
               />
             </Testimonial>
           ))}
