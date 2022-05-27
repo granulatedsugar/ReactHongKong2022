@@ -9,6 +9,7 @@ import {
   Stack,
   StackDivider,
   Icon,
+  Button,
   useColorModeValue,
 } from "@chakra-ui/react";
 import {
@@ -17,6 +18,7 @@ import {
   IoSearchSharp,
 } from "react-icons/io5";
 import { dishes } from "../../data/data";
+import { Link } from "react-router-dom";
 
 interface FeatureProps {
   text: string;
@@ -83,6 +85,13 @@ const Dish = (dish) => {
               iconBg={useColorModeValue("purple.100", "purple.900")}
               text={dish.dish.category}
             />
+          </Stack>
+          <Stack spacing={4} direction="row" align="center">
+            <Link to={`/menu/${dish.dish.id}`}>
+              <Button colorScheme="teal" size="md">
+                View
+              </Button>
+            </Link>
           </Stack>
         </Stack>
         <Flex>

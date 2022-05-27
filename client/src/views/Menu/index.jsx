@@ -14,7 +14,7 @@ const Menu = () => {
       <Hero />
       <Container maxW={"100%"} padding={"50px"}>
         <Flex justify={"center"} wrap={"wrap"} align={"center"}>
-          <Dishes dishes={dishes} />
+          <Dishes key={dishes.id} dishes={dishes} />
         </Flex>
       </Container>
     </>

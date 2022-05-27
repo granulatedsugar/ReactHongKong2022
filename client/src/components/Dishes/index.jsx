@@ -3,6 +3,8 @@ import { Box, Image, Badge, Container } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import Dish from "../Dish";
 import Comments from "../Comments";
+import { testimonials } from "../../data/data";
+import { Link } from "react-router-dom";
 
 const Dishes = (dishes) => {
   const [selected, setSelected] = useState("");
@@ -75,7 +77,11 @@ const Dishes = (dishes) => {
       {selected ? (
         <Container minWidth={"100%"}>
           <Dish dish={selected} />
-          <Comments comment={selected.comments} />
+          <Comments
+            comment={testimonials.filter(
+              (comment) => comment.dishId === selected.id
+            )}
+          />
         </Container>
       ) : (
         <Container minWidth={"100%"}></Container>
