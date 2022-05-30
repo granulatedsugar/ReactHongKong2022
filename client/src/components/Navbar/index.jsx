@@ -83,7 +83,7 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={400}
             variant={"link"}
-            href={"#"}
+            href={"/login"}
           >
             Sign In
           </Button>
@@ -303,11 +303,11 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Learn Design",
+    label: "Favorites",
     href: "#",
   },
   {
-    label: "Hire Designers",
-    href: "#",
+    label: "Contact",
+    href: "/contact",
   },
 ];
