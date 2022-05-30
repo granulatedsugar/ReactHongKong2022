@@ -288,7 +288,7 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Find Work",
+    label: "About",
     children: [
       {
         label: "Job Board",
