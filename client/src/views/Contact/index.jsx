@@ -16,6 +16,7 @@ import {
   InputGroup,
   InputLeftElement,
   Textarea,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import {
   MdPhone,
@@ -25,14 +26,27 @@ import {
   MdOutlineEmail,
 } from "react-icons/md";
 import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
+import { useState } from "react";
 
-export default function contact() {
+const Contact = () => {
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+
+  const handleSubmit = () => {
+    //TODO: Redux
+  };
+  console.log(inputs);
+
   return (
     <Container bg="#fff" maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
         <Box
-          bg="#02054B"
-          color="white"
+          bg="#fff"
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}
@@ -52,9 +66,8 @@ export default function contact() {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid", color: "purple.400" }}
+                        leftIcon={<MdPhone size="20px" />}
                       >
                         +91-988888888
                       </Button>
@@ -63,20 +76,18 @@ export default function contact() {
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid", color: "purple.400" }}
+                        leftIcon={<MdEmail size="20px" />}
                       >
-                        hello@abc.com
+                        hello@ristorante.com
                       </Button>
                       <Button
                         size="md"
                         height="48px"
                         width="200px"
                         variant="ghost"
-                        color="#DCE2FF"
-                        _hover={{ border: "2px solid #1C6FEB" }}
-                        leftIcon={<MdLocationOn color="#1970F1" size="20px" />}
+                        _hover={{ border: "2px solid", color: "purple.400" }}
+                        leftIcon={<MdLocationOn size="20px" />}
                       >
                         Burbank, California
                       </Button>
@@ -93,7 +104,7 @@ export default function contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "purple.400", color: "#fff" }}
                       icon={<MdFacebook size="28px" />}
                     />
                     <IconButton
@@ -101,7 +112,7 @@ export default function contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "purple.400", color: "#fff" }}
                       icon={<BsGithub size="28px" />}
                     />
                     <IconButton
@@ -109,7 +120,7 @@ export default function contact() {
                       variant="ghost"
                       size="lg"
                       isRound={true}
-                      _hover={{ bg: "#0D74FF" }}
+                      _hover={{ bg: "purple.400", color: "#fff" }}
                       icon={<BsDiscord size="28px" />}
                     />
                   </HStack>
@@ -126,7 +137,12 @@ export default function contact() {
                             pointerEvents="none"
                             children={<BsPerson color="gray.800" />}
                           />
-                          <Input type="text" size="md" />
+                          <Input
+                            name="name"
+                            type="text"
+                            size="md"
+                            onChange={handleChange}
+                          />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="name">
@@ -136,25 +152,34 @@ export default function contact() {
                             pointerEvents="none"
                             children={<MdOutlineEmail color="gray.800" />}
                           />
-                          <Input type="text" size="md" />
+                          <Input
+                            name="email"
+                            type="email"
+                            size="md"
+                            onChange={handleChange}
+                          />
                         </InputGroup>
                       </FormControl>
                       <FormControl id="name">
                         <FormLabel>Message</FormLabel>
                         <Textarea
+                          name="message"
                           borderColor="gray.300"
                           _hover={{
                             borderRadius: "gray.300",
                           }}
                           placeholder="message"
+                          onChange={handleChange}
                         />
                       </FormControl>
                       <FormControl id="name" float="right">
                         <Button
-                          variant="solid"
-                          bg="#0D74FF"
-                          color="white"
-                          _hover={{}}
+                          bg={useColorModeValue("purple.400", "purple.800")}
+                          color={useColorModeValue("white", "gray.800")}
+                          _hover={{
+                            bg: "purple.600",
+                          }}
+                          onClick={handleSubmit}
                         >
                           Send Message
                         </Button>
@@ -169,4 +194,6 @@ export default function contact() {
       </Flex>
     </Container>
   );
-}
+};
+
+export default Contact;
