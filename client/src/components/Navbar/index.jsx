@@ -91,9 +91,12 @@ export default function WithSubnavigation() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
+            padding={3}
             color={"white"}
             bg={"gray.500"}
-            href={"#"}
+            as={"a"}
+            variant={"link"}
+            href={"/register"}
             _hover={{
               bg: "purple.400",
             }}

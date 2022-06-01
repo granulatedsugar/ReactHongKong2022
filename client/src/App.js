@@ -6,6 +6,7 @@ import Contact from "./views/Contact";
 import Footer from "./components/Footer";
 import Product from "./views/Product";
 import Login from "./views/Login";
+import Register from "./views/Register";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/menu/:id" element={<Product />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
         <Footer />
       </Router>
