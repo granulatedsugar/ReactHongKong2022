@@ -1,0 +1,19 @@
+TASK 1 : https://github.com/nikkoroque/github-final-project.git
+
+TASK 2 : https://github.com/nikkoroque/github-final-project/blob/main/LICENSE
+
+TASK 3 : https://github.com/nikkoroque/github-final-project/blob/main/README.md
+
+TASK 4 : https://github.com/nikkoroque/github-final-project/blob/main/CODE_OF_CONDUCT.md
+
+TASK 5 : https://github.com/nikkoroque/github-final-project/blob/main/CONTRIBUTING.md
+
+TASK 6 : https://github.com/nikkoroque/github-final-project/blob/main/simple-interest.sh
+
+TASK 7 : nikkoroque
+
+TASK 8 : https://github.com/nikkoroque/jbbmo-Introduction-to-Git-and-GitHub.git
+
+TASK 9 : https://github.com/ibm-developer-skills-network/jbbmo-Introduction-to-Git-and-GitHub/pull/1361
+
+TASK 10: https://github.com/nikkoroque/jbbmo-Introduction-to-Git-and-GitHub/pull/2
